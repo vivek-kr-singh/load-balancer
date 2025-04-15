@@ -49,7 +49,7 @@ java -jar target/load-balancer-1.0.0.jar
 
 ## API Endpoints
 
-Forwarding Requests
+### Forwarding Requests
 Forward Request:
 
 Method: POST
@@ -58,8 +58,8 @@ URL: http://localhost:8080/api/loadbalancer/forward
 
 Body: Plain text payload representing the request
 
-Dynamic Backend Management
-Register a New Backend Server:
+### Dynamic Backend Management
+#### Register a New Backend Server:
 
 Method: POST
 
@@ -67,7 +67,7 @@ URL: http://localhost:8080/api/loadbalancer/backend?url=<backend_URL>
 Example:
 curl -X POST "http://localhost:8080/api/loadbalancer/backend?url=http://localhost:8081"
 
-Remove a Backend Server:
+#### Remove a Backend Server:
 
 Method: DELETE
 
@@ -75,25 +75,25 @@ URL: http://localhost:8080/api/loadbalancer/backend?url=<backend_URL>
 Example:
 curl -X DELETE "http://localhost:8080/api/loadbalancer/backend?url=http://localhost:8081"
 
-Get Backend Status:
+#### Get Backend Status:
 
 Method: GET
 
 URL: http://localhost:8080/api/loadbalancer/backend/status
 This endpoint returns a JSON object with the lists of active and inactive backend servers.
 
-Actuator Endpoints
+### Actuator Endpoints
 Health Check:
 curl http://localhost:8080/actuator/health
 
-Metrics:
+### Metrics:
 curl http://localhost:8080/actuator/metrics
 
-WireMock Setup Instructions
+## WireMock Setup Instructions
 
-WireMock can be used to simulate backend servers when testing your load balancer.
+### WireMock can be used to simulate backend servers when testing your load balancer.
 
-Steps to Set Up WireMock as a Standalone Server
+#### Steps to Set Up WireMock as a Standalone Server
 
 Download WireMock Standalone:
 Download the standalone JAR from WireMock Downloads.
